@@ -1,0 +1,13 @@
+{
+  "name": "jiadun-dev-marketplace",
+  "owner": {
+    "name": "jiadun",
+    "email": "jiadun@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "jiadun's Claude Code plugin marketplace - skills, plugins, agents and more",
+    "version": "0.1.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": []
+}
