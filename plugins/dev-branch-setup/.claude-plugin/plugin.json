@@ -1,0 +1,8 @@
+{
+  "name": "dev-branch-setup",
+  "description": "需求开发前期准备 - 使用 git worktree 创建隔离工作空间",
+  "version": "1.0.0",
+  "author": {
+    "name": "jiadun"
+  }
+}

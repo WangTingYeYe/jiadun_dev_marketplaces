@@ -17,7 +17,10 @@ A Claude Code plugin marketplace for sharing skills, plugins, agents and more.
 
 ## Available Plugins
 
-> Coming soon — skills, plugins, and agents will be published here.
+| Plugin | Description |
+|--------|-------------|
+| `dev-branch-setup` | 需求开发前期准备 - 使用 git worktree 创建隔离工作空间 |
+| `merge-conflict-resolver` | 分支冲突合并与 PR 发起 - 自动创建 merge 分支、解决冲突并发起 PR |
 
 ## License
 

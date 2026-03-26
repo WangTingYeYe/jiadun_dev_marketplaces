@@ -1,0 +1,8 @@
+{
+  "name": "merge-conflict-resolver",
+  "description": "分支冲突合并与 PR 发起 - 自动创建 merge 分支、解决冲突并发起 PR",
+  "version": "1.0.0",
+  "author": {
+    "name": "jiadun"
+  }
+}

@@ -9,5 +9,18 @@
     "version": "0.1.0",
     "pluginRoot": "./plugins"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "dev-branch-setup",
+      "source": "./plugins/dev-branch-setup",
+      "description": "需求开发前期准备 - 使用 git worktree 创建隔离工作空间",
+      "version": "1.0.0"
+    },
+    {
+      "name": "merge-conflict-resolver",
+      "source": "./plugins/merge-conflict-resolver",
+      "description": "分支冲突合并与 PR 发起 - 自动创建 merge 分支、解决冲突并发起 PR",
+      "version": "1.0.0"
+    }
+  ]
 }
