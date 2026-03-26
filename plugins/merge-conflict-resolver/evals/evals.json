@@ -1,0 +1,45 @@
+{
+  "skill_name": "merge-conflict-resolver",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把 master 合进 EIM65086922_20260304_1 分支",
+      "expected_output": "使用 git worktree 在 .worktrees/merge-EIM65086922_20260304_1 中创建隔离工作空间，在其中执行 merge、解决冲突、提交推送、创建 PR，最后清理 worktree",
+      "files": [],
+      "expectations": [
+        "使用 git worktree add 创建隔离工作空间而非 git checkout",
+        "worktree 目录位于 .worktrees/merge-<迭代分支名>",
+        "merge 分支命名为 <迭代分支名>_merge",
+        "在 worktree 目录中执行 git merge 而非主仓库",
+        "PR 的 base 是迭代分支，head 是 _merge 分支",
+        "完成后清理 worktree"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "我当前在 .worktrees/记忆冲突检测优化 这个 worktree 里开发，迭代分支 EIM65086922_20260304_1 跟 master 有冲突，帮我合一下",
+      "expected_output": "检测到当前在 worktree 中，自动找到主仓库路径，在主仓库下的 .worktrees/ 中创建 merge worktree 进行合并",
+      "files": [],
+      "expectations": [
+        "检测当前在 worktree 中（使用 git rev-parse --git-common-dir）",
+        "正确找到主仓库路径",
+        "在主仓库的 .worktrees/ 下创建 merge worktree，而非在当前 worktree 中操作",
+        "使用 git -C 在主仓库中执行 fetch 操作",
+        "不影响当前 worktree 的工作区状态"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "EIM65086922_20260304_1 跟 master 合一下，merge 分支好像之前建过了",
+      "expected_output": "检测到已有 merge 分支和/或 worktree，询问用户是否删除重建，处理分支和 worktree 的清理",
+      "files": [],
+      "expectations": [
+        "检查 _merge 分支是否已存在",
+        "检查对应的 worktree 是否已存在",
+        "询问用户是否删除重建",
+        "如果删除重建，先 git worktree remove 再 git branch -D",
+        "重建后正常进入合并流程"
+      ]
+    }
+  ]
+}
